@@ -63,8 +63,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="iss.pos.test.DiscountTest" todir="${junit.output.dir}"/>
-            <test name="iss.pos.test.SampleTest" todir="${junit.output.dir}"/>
+            <test name="iss.pos.test.AllTests" todir="${junit.output.dir}"/>
             <classpath refid="DiscountEngineJava.classpath"/>
         </junit>
     </target>
