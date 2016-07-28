@@ -11,7 +11,7 @@
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
     <path id="JUnit 4.libraryclasspath">
-        <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="lib/junit.jar"/>
         <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
     <path id="DiscountEngineJava.classpath">
