@@ -8,6 +8,12 @@ import java.util.List;
 public class Order {
 	private List<OrderItem> items;
 	
+	private double discountedAmount = 0.0;
+	
+	public List<OrderItem> getItems() {
+		return items;
+	}
+
 	public Order(){
 		items = new ArrayList<OrderItem>();
 	}
@@ -61,6 +67,10 @@ public class Order {
 			total += oi.getQuantity()*oi.getProduct().getPrice();
 		}			
 		
-		return total;
+		return total - discountedAmount;
+	}
+
+	public void setDiscountedAmount(double discountedAmount) {
+		this.discountedAmount = discountedAmount;
 	}
 }
