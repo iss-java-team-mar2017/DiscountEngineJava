@@ -111,4 +111,47 @@ public class DiscountTest {
 //		double expectedValue = Products.GetProduct("redDress").getPrice() + (Products.GetProduct("redSocks").getPrice() * 0.7);
 //		assertEquals(expectedValue, discountedOrder.getTotalPrice(),0.001);
 //	}
+
+	
+	@Test
+	public void test3ABuy3ItemSameStyle() {
+		
+		//setup
+		Promotion promo = new Promotion(); //TODO: setup the promotion as you see fit
+		DiscountCalculator dc = new DiscountCalculator(promo);
+
+		Order myTestOrder = new Order();
+		myTestOrder.add(Products.GetProduct("whiteSocks"), 3);
+		
+		//exercise
+		Order newOrder = dc.calculateDiscount(myTestOrder);
+		
+		//verify
+		double expectedValue = 27.0;//TODO: set the expected value;
+		assertEquals(expectedValue, newOrder.getTotalPrice(),0.001);
+        //TODO: add additional verification if necessary
+	}	
+	
+	@Test
+	public void test4ABuy4ItemSameDiffStyle() {
+		
+		//setup
+		Promotion promo = new Promotion(); //TODO: setup the promotion as you see fit
+		DiscountCalculator dc = new DiscountCalculator(promo);
+
+		Order myTestOrder = new Order();
+		myTestOrder.add(Products.GetProduct("redSocks"), 1);
+		myTestOrder.add(Products.GetProduct("whiteSocks"), 1);
+		myTestOrder.add(Products.GetProduct("greenDress"), 1);
+		myTestOrder.add(Products.GetProduct("redDress"), 1);
+		
+		//exercise
+		Order newOrder = dc.calculateDiscount(myTestOrder);
+		
+		//verify
+		double expectedValue = 187.0;//TODO: set the expected value;
+		assertEquals(expectedValue, newOrder.getTotalPrice(),0.001);
+        //TODO: add additional verification if necessary
+	}
+
 }

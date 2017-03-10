@@ -56,6 +56,7 @@ public class DiscountCalculator {
 			}
 		}
 
+		
 		order.setDiscountedAmount(totalDiscountedAmount);
 
 		return order;
