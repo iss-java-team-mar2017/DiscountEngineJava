@@ -131,6 +131,7 @@ public class DiscountTest {
 		assertEquals(expectedValue, newOrder.getTotalPrice(),0.001);
         //TODO: add additional verification if necessary
 	}	
+
 	
 	@Test
 	public void test4ABuy4ItemSameDiffStyle() {
